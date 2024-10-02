@@ -1,0 +1,295 @@
+body {
+  max-width: 1920px;
+  margin: auto;
+}
+* {
+  font-family: "Inter";
+  font-style: normal;
+}
+.top-header {
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 100px;
+  align-items: center;
+}
+.top-header .name {
+  font-size: 26px;
+}
+.nav ul {
+  display: flex;
+  list-style-type: none;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.nav li {
+  padding: 0 10px;
+}
+.nav a {
+  text-decoration: none;
+  color: #000;
+}
+.social-link img {
+  width: 20px;
+}
+#about {
+  display: flex;
+  background-color: #f6d2b8;
+  padding: 100px;
+  position: relative;
+}
+.picture {
+  flex: 1;
+  margin: 0 20px;
+  z-index: 0;
+}
+.picture img {
+  width: 100%;
+}
+.picture.left::before,
+.picture.right::before {
+  content: " ";
+  width: 374px;
+  height: 329px;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+}
+.picture.left::before {
+  background-color: #e5975f;
+  left: 0;
+}
+.picture.right::before {
+  background-color: #78712f;
+  right: 0;
+}
+#about-me {
+  flex: 2;
+}
+.about-me__title {
+  margin: 1em 0 60px;
+  font-size: 30px;
+}
+.about-me__introduction {
+  font-family: "Spectral";
+  font-weight: 800;
+  font-style: italic;
+  width: 60%;
+}
+#about-me p {
+  width: 80%;
+  font-size: 14px;
+}
+#gallery .title {
+  text-align: center;
+  padding: 2em 0;
+}
+.nav-pills .nav-link {
+  color: #000;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #78712f;
+  border-radius: 0;
+}
+
+.nav-link:hoover {
+  cursor: pointer;
+}
+
+.item-column {
+  position: relative;
+  padding: 0;
+  margin-bottom: 0 !important;
+}
+.item-column::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.gallery-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 0.5em;
+}
+.mg-prev,
+.mg-next {
+  width: 30px;
+  height: 30px;
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+.quote {
+  font-family: "Spectral";
+  font-style: italic;
+  width: 70%;
+  margin: auto;
+  padding: 3em 0;
+}
+.quote__text {
+  font-weight: 300;
+}
+.quote__author {
+  font-weight: 800;
+  font-size: 22px;
+}
+#services,
+#contact {
+  margin: auto;
+  position: relative;
+  padding: 100px;
+}
+#services {
+  background-color: #a8d5d8;
+}
+#services .container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 0;
+}
+#services .container::before {
+  content: " ";
+  background-color: #1c6474;
+  width: 100%;
+  height: 30%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+.service {
+  background-color: white;
+  max-width: 390px;
+  width: 30%;
+  height: 337px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1;
+}
+#contact {
+  background-color: #d8d3a8;
+}
+#contact .container {
+  display: flex;
+}
+.form-container {
+  flex: 2;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: flex-start;
+}
+form input,
+form textarea {
+  width: 100%;
+  background-color: transparent;
+  border: solid 1px;
+  margin-bottom: 20px;
+}
+form input {
+  height: 2.5em;
+}
+form textarea {
+  height: 5em;
+  line-height: 2.5em;
+  font-size: 1.2em;
+}
+input[type="submit"] {
+  background-color: #969696;
+  padding: 0.5em 1em;
+}
+
+@media all and (max-width: 1180px) {
+  .picture {
+    flex: 2;
+  }
+  #about,
+  #contact .container {
+    align-items: center;
+  }
+  .about-me__title {
+    margin: 0 0 1em;
+  }
+  #about-me h6,
+  #about-me p {
+    width: 100%;
+  }
+}
+@media all and (max-width: 1000px) {
+  #about {
+    flex-direction: column;
+  }
+  .picture {
+    width: 50%;
+  }
+  .picture.left::before {
+    width: 100%;
+    height: 30%;
+    top: 0;
+  }
+  #services .container {
+    flex-direction: column;
+  }
+  .service {
+    width: 100%;
+    height: auto;
+    margin: 2em 0;
+  }
+  #services .container::before {
+    width: 30%;
+    height: 100%;
+    right: 0;
+    left: auto;
+  }
+  #contact .container {
+    flex-direction: column;
+  }
+  #contact .picture.right {
+    margin-top: 1em;
+  }
+}
+@media all and (max-width: 650px) {
+  .top-header {
+    flex-direction: column;
+    padding: 0;
+  }
+  .top-header .nav ul {
+    width: 100%;
+  }
+  .top-header .nav li {
+    flex: 1;
+    padding-block: 1em;
+    text-align: center;
+  }
+  .picture.left::before,
+  .picture.right::before {
+    height: 150px;
+  }
+  #about,
+  #contact {
+    padding: 2em;
+  }
+  form {
+    width: 100%;
+  }
+  .picture {
+    width: 80%;
+  }
+}
+
+.visually-hidden {
+  background-color: #595959;
+}
